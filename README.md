@@ -32,3 +32,17 @@ You can find out which port the LDAP server is bound to on the host by running
 file (to set up your directory) like so:
 
     ldapadd -h localhost -p <host_port> -c -x -D cn=admin,dc=mycorp,dc=com -W -f data.ldif
+
+
+# testing access
+
+Run `make exec` to get a Bash shell inside the `ldap-test` container, or `make client`
+to create a new container linked to the `ldap-test` `slapd`.
+
+Inside the client container, you can search the LDAP database using:
+
+```
+ldapsearch -h sldapd -D cn=admin,dc=test,dc=com -W -b dc=test,dc=com
+```
+
+
