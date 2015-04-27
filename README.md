@@ -60,3 +60,6 @@ and
 
 should work
 
+## Offline access to LDAP DB
+
+You can also run `docker exec -it ldap-test slapcat` to see what is in the LDAP database offline.

@@ -33,6 +33,11 @@ EOF
   dpkg-reconfigure -f noninteractive slapd
 
   touch /var/lib/ldap/docker_bootstrapped
+
+  status "add guest user, with password guest"
+  # guest.ldif contains a `userPassword` ivalue that is created using `slappasswd -s guest`
+  slapadd -c -v -l /ldap/guest.ldif
+
 else
   status "found already-configured slapd"
 fi

@@ -2,4 +2,4 @@ dn: cn=guest,dc=test,dc=com
 objectClass: simpleSecurityObject
 objectclass: organizationalRole
 description: LDAP Read-only Access
-userPassword:
+userPassword: {SSHA}AEGoKoxDOZpdf0lWvHDeLrehhs1rseBr
