@@ -1,0 +1,10 @@
+dn: uid=alc,ou=Users,dc=test,dc=com
+uid: alc
+uidNumber: 1000
+gidNumber: 1000
+cn: Alice
+sn: E
+objectClass: posixAccount
+objectclass: organizationalPerson
+loginShell: /sbin/nologin
+homeDirectory: /home/alc

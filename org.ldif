@@ -1,0 +1,12 @@
+dn: ou=Users,dc=test,dc=com
+objectClass: organizationalUnit
+ou: Users
+
+dn: ou=Groups,dc=test,dc=com
+objectClass: organizationalUnit
+ou: Groups
+
+dn: cn=sysadmins,ou=Groups,dc=test,dc=com
+gidNumber: 1000
+objectClass: posixGroup
+cn: sysadmins
