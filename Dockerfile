@@ -1,4 +1,6 @@
+
 FROM debian:jessie
+MAINTAINER Sven Dowideit <SvenDowideit@home.org.au>
 
 RUN apt-get update -qq
 
@@ -22,3 +24,6 @@ ENTRYPOINT ["/ldap/slapd.sh"]
 CMD []
 
 WORKDIR /ldap
+
+# persist the ldap database between restarts
+VOLUME ["/var/lib/ldap", "/etc/ldap"]

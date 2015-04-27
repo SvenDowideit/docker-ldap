@@ -1,4 +1,4 @@
-
+.PHONY: run debug clean exec ldapssearch client build
 
 
 run: build clean
