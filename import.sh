@@ -2,6 +2,9 @@
 
 set -e
 
+
+# simplistic initial configuration inspired from
+# https://www.lisenet.com/2014/install-and-configure-an-openldap-server-with-ssl-on-debian-wheezy/
 ldapadd -x -D cn=admin,dc=test,dc=com -w admin -f ./guest.ldif
 ldappasswd -x -D cn=admin,dc=test,dc=com -w admin -s guest cn=guest,dc=test,dc=com
 
