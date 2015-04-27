@@ -13,5 +13,11 @@ clean:
 exec:
 	docker exec -it ldap-test bash
 
+ldapsearch:
+	docker exec -it ldap-test ldapsearch -x -b dc=test,dc=com
+
+client:
+	docker run --rm -it --link ldap-test:sldapd --entrypoint bash docker-ldap
+
 build:
 	docker build -t docker-ldap .

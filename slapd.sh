@@ -39,4 +39,4 @@ fi
 
 status "starting slapd"
 set -x
-exec /usr/sbin/slapd -h "ldap:///" -u openldap -g openldap -d 0
+exec /usr/sbin/slapd -h "ldapi:/// ldap:/// ldaps:///" -u openldap -g openldap -d 1
