@@ -11,11 +11,18 @@ ADD slapd.tar.gz /etc/ldap
 ADD db.ldif /tmp/
 
 ADD start_slapd.sh /usr/local/bin/start_slapd
+ADD slapd.sh /slapd.sh
 RUN mkdir /var/run/ldap
 
 EXPOSE 389 636
 
+ENV LDAP_ROOTPASS admin
+ENV LDAP_ORGANISATION test org
+ENV LDAP_DOMAIN test.com
+
+
 #ENTRYPOINT ["/usr/local/bin/start_slapd", "-h ldapi:/// ldap:/// ldaps:///"]
-ENTRYPOINT ["/usr/local/bin/start_slapd"]
+#ENTRYPOINT ["/usr/local/bin/start_slapd"]
+ENTRYPOINT ["/slapd.sh"]
 
 CMD []
